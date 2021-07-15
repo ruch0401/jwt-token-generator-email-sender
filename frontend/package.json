@@ -1,0 +1,22 @@
+{
+  "name": "email-sender",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "author": "Ruchit Bhardwaj",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.1",
+    "cors": "^2.8.5",
+    "express": "^4.15.2",
+    "http": "0.0.0",
+    "http-status": "^1.0.1",
+    "http-status-codes": "*",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-js": "^0.5.0",
+    "logger": "0.0.1",
+    "path": "^0.12.7",
+    "request": "^2.81.0",
+    "util": "^0.10.3"
+  }
+}

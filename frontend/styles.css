@@ -1,0 +1,25 @@
+.container__input {
+    width: 400px;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.div-generate-token, .div-send-email {
+    position: relative;
+    float: left;
+    width: 50%;
+    text-align: center;
+    border-radius: 5px;
+}
+
+button {
+    width: 150px;
+}
+
+#sampleLabel {
+    text-align: center;
+}

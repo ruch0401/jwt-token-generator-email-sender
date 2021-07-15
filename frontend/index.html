@@ -1,0 +1,266 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Token Generator and Email Sender</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</head>
+
+<body>
+    <h2 style="text-align: center; margin-bottom: 50px;">Token Generation and Send Email Utility</h2>
+    <div class="div-generate-token">
+
+        <input class="container__input" id="userId" type="text" placeholder="User ID"><br /><br />
+        <input class="container__input" id="consumerAppKey" type="text" placeholder="Consumer App Key"><br /><br />
+        <label id="sampleLabel">OR</label><br /><br />
+        <select class="container__input" id="consumerAppKeyDropDown">
+            <option value="Select">Select Consumer App Key </option>
+            <option value="f3882549-5cf4-4aea-b5da-dbff71b1ea3d">2 | AbbvieCCM-0071 Development |
+                f3882549-5cf4-4aea-b5da-dbff71b1ea3d </option>
+            <option value="9587b930-3fc3-4db1-8571-362891e3eaac">3 | BMS CCM OE Development |
+                9587b930-3fc3-4db1-8571-362891e3eaac </option>
+            <option value="9b94a1eb-a018-44c1-a781-5bd91fa2609e">4 | Biogen CCM OE Development |
+                9b94a1eb-a018-44c1-a781-5bd91fa2609e </option>
+            <option value="cdf0bf6b-d513-433b-b83f-51d7705b52c2">1 | Test instance app development |
+                cdf0bf6b-d513-433b-b83f-51d7705b52c2 </option>
+            <option value="f94d51b4-7e40-495e-b4f5-97adae681efa">5 | OE QA Development |
+                f94d51b4-7e40-495e-b4f5-97adae681efa </option>
+            <option value="f6413a28-9d1e-4660-81cd-8ec430fadeeb">34 | MerckCCM-0071 Development |
+                f6413a28-9d1e-4660-81cd-8ec430fadeeb </option>
+            <option value="2f7b291f-dfd4-44c8-a5a6-cf6c44140bb7">35 | CCM Demo Development |
+                2f7b291f-dfd4-44c8-a5a6-cf6c44140bb7 </option>
+            <option value="98da1702-616c-4a36-9f07-daf53b558dc4">36 | GSK CCM OE Development |
+                98da1702-616c-4a36-9f07-daf53b558dc4 </option>
+            <option value="1ffbc8ae-ef39-4503-a876-6b652975edf3">37 | AbbvieCCM-0071 Execution |
+                1ffbc8ae-ef39-4503-a876-6b652975edf3 </option>
+            <option value="5e671304-99d4-4bd8-9dec-a2dfd67c678c">38 | PA SD Development |
+                5e671304-99d4-4bd8-9dec-a2dfd67c678c </option>
+            <option value="ad31ec95-24a0-4204-af1f-cd870e5ebe98">39 | OE Stag Execution |
+                ad31ec95-24a0-4204-af1f-cd870e5ebe98 </option>
+            <option value="76f10a5e-7a67-4a14-a897-5ee3559468df">40 | Biogen CCM OE Execution |
+                76f10a5e-7a67-4a14-a897-5ee3559468df </option>
+            <option value="a235c0ce-997f-4ba3-b7f1-7978027591da">41 | GSK CCM OE Execution |
+                a235c0ce-997f-4ba3-b7f1-7978027591da </option>
+            <option value="68737524-0d97-4cae-b906-4bf6ba7fe6a5">42 | BMS CCM OE 0071A Execution Prod |
+                68737524-0d97-4cae-b906-4bf6ba7fe6a5 </option>
+            <option value="1171dcb2-75a4-4f8c-99e9-4aa2f544c7a7">43 | OE PA Development |
+                1171dcb2-75a4-4f8c-99e9-4aa2f544c7a7 </option>
+            <option value="fd383ee0-1d57-40ee-b28e-3a785f329ab5">44 | OE PA Stage Instance Development |
+                fd383ee0-1d57-40ee-b28e-3a785f329ab5 </option>
+            <option value="26428090-9026-4c95-8767-3b37ab2d8046">45 | OE GSK b Stage Instance Development |
+                26428090-9026-4c95-8767-3b37ab2d8046 </option>
+            <option value="debb2fe3-c365-4194-b833-29c1e34ce5c3">46 | OE GSK c Instance Development |
+                debb2fe3-c365-4194-b833-29c1e34ce5c3 </option>
+            <option value="fefc9f6a-1dbd-4b76-9058-6df5df6aefea">47 | OE GSK b Prod Execution |
+                fefc9f6a-1dbd-4b76-9058-6df5df6aefea </option>
+            <option value="14e85f6f-4dca-4b56-9440-54bfe21be9c6">48 | OE GSK c Prod Execution |
+                14e85f6f-4dca-4b56-9440-54bfe21be9c6 </option>
+            <option value="a11bcc5b-d6ab-4fa0-8186-dbd8f5727f58">49 | OE GSK a instance Development |
+                a11bcc5b-d6ab-4fa0-8186-dbd8f5727f58 </option>
+            <option value="0af39f42-087e-42ad-baad-7e66b10bca2f">50 | OE GSK a instance Development |
+                0af39f42-087e-42ad-baad-7e66b10bca2f </option>
+            <option value="498799b6-38db-4144-bdf6-8d69637b87f5">51 | RB Development |
+                498799b6-38db-4144-bdf6-8d69637b87f5 </option>
+            <option value="81749025-eba0-4ea8-b869-8496605fad98">52 | RB CCM OE Execution |
+                81749025-eba0-4ea8-b869-8496605fad98 </option>
+            <option value="1742db6f-36b2-45b6-9445-0bd2498fc45a">53 | BI Spain Development |
+                1742db6f-36b2-45b6-9445-0bd2498fc45a </option>
+            <option value="325c3079-4308-43b9-92b4-1d52f46f6db2">54 | BI Spain CCM OE Execution |
+                325c3079-4308-43b9-92b4-1d52f46f6db2 </option>
+            <option value="c33a5d1f-9806-4962-8522-0c1a454d579b">67 | CCM Asset Development |
+                c33a5d1f-9806-4962-8522-0c1a454d579b </option>
+            <option value="7e863101-9d48-49cc-9c07-0753f25d3769">68 | Janssen Canada Development |
+                7e863101-9d48-49cc-9c07-0753f25d3769 </option>
+            <option value="df3c9eda-82d2-495f-890d-acd990ecc89e">69 | Janssen Canada Execution |
+                df3c9eda-82d2-495f-890d-acd990ecc89e </option>
+            <option value="46a22f8e-63c3-4b81-9aff-5f16bb83b972">70 | ViiV Development |
+                46a22f8e-63c3-4b81-9aff-5f16bb83b972 </option>
+            <option value="eb76a1ea-c530-448e-a58b-23fdb6214f0e">71 | ViiV Execution |
+                eb76a1ea-c530-448e-a58b-23fdb6214f0e </option>
+            <option value="6ee4a298-1bfe-4e39-9135-70430f064332">72 | PA SD Asset Development |
+                6ee4a298-1bfe-4e39-9135-70430f064332 </option>
+            <option value="55fc9c1f-cc59-4e71-a40c-883024054b5d">73 | ViiV PreProd Execution |
+                55fc9c1f-cc59-4e71-a40c-883024054b5d </option>
+            <option value="1d757126-ba7b-4b15-a95b-cbbddc86b521">74 | PA SD Execution1 |
+                1d757126-ba7b-4b15-a95b-cbbddc86b521 </option>
+            <option value="0257b902-a6f6-4c7f-920f-6e6ff6dcbe79">75 | PA SD Execution2 |
+                0257b902-a6f6-4c7f-920f-6e6ff6dcbe79 </option>
+            <option value="b4a6d459-c444-4b8f-b586-137758c4e6e2">100 | FS on FB Asset Development |
+                b4a6d459-c444-4b8f-b586-137758c4e6e2 </option>
+            <option value="5f9a6542-f17e-4da4-9c62-0944b972bad9">133 | Client_Verso_OE_0071a Development |
+                5f9a6542-f17e-4da4-9c62-0944b972bad9 </option>
+            <option value="779ce586-b5e1-47c0-9cf2-06f69182b4db">134 | Merck PSR Development |
+                779ce586-b5e1-47c0-9cf2-06f69182b4db </option>
+            <option value="25c98b4a-3cb5-40a3-8994-808ef1c76e2b">137 | Amgen Development |
+                25c98b4a-3cb5-40a3-8994-808ef1c76e2b </option>
+            <option value="c0e83efe-2074-47f0-b009-b16a2e8f6f6c">136 | PA SD OE Stage KITE |
+                c0e83efe-2074-47f0-b009-b16a2e8f6f6c </option>
+            <option value="49e78c0e-8579-48b7-978b-61b66201bfab">135 | PA SD OE Stage Integration |
+                49e78c0e-8579-48b7-978b-61b66201bfab </option>
+            <option value="7338d4e1-e5cb-4fbd-a839-f751b3206450">138 | Biogen Beta Development |
+                7338d4e1-e5cb-4fbd-a839-f751b3206450 </option>
+            <option value="c8eb7b4d-01a4-4752-a598-36d37ed3de4d">139 | BMS Beta Development |
+                c8eb7b4d-01a4-4752-a598-36d37ed3de4d </option>
+            <option value="dd7efaab-aea0-42ff-9a2c-dbb8c20c91b1">140 | Compellium SPM Development |
+                dd7efaab-aea0-42ff-9a2c-dbb8c20c91b1 </option>
+            <option value="4f9f4cf0-3cc1-4a9f-b108-ad802686eb0f">141 | BI US Development |
+                4f9f4cf0-3cc1-4a9f-b108-ad802686eb0f </option>
+            <option value="76ccdb0d-17c9-4976-b5f6-4717c650022e">142 | BI US Execution |
+                76ccdb0d-17c9-4976-b5f6-4717c650022e </option>
+            <option value="6bfce025-315a-4e36-a7db-6e20c243af56">166 | NBA Training On FB (ML) Development |
+                6bfce025-315a-4e36-a7db-6e20c243af56 </option>
+            <option value="3b7c9d54-fa91-40cc-9b87-13f855d2f1d2">199 | PA SD Client Development |
+                3b7c9d54-fa91-40cc-9b87-13f855d2f1d2 </option>
+            <option value="540e2d19-43e9-4f26-9fb5-27ae4b0aad05">200 | UCB US Development |
+                540e2d19-43e9-4f26-9fb5-27ae4b0aad05 </option>
+            <option value="c5220b27-3440-4fb4-8494-a557a37c9589">201 | UCB EU Development |
+                c5220b27-3440-4fb4-8494-a557a37c9589 </option>
+            <option value="1b795ac3-8284-411a-a1ef-ee3223c61c03">202 | Demo FI Development |
+                1b795ac3-8284-411a-a1ef-ee3223c61c03 </option>
+            <option value="d550c1e8-8bc3-4b46-bba2-b1bdbead802b">203 | UCB US Execution |
+                d550c1e8-8bc3-4b46-bba2-b1bdbead802b </option>
+            <option value="64646b25-ea1c-48f6-8fd5-0144d779844b">204 | UCB EU Execution |
+                64646b25-ea1c-48f6-8fd5-0144d779844b </option>
+            <option value="874531ce-46ad-4956-be17-23b3fe211174">205 | FlowBuilder Tutorial Development |
+                874531ce-46ad-4956-be17-23b3fe211174 </option>
+            <option value="941c33e1-7d27-4bc8-8567-8584353df8ab">232 | MerckCCM-0071 Execution |
+                941c33e1-7d27-4bc8-8567-8584353df8ab </option>
+            <option value="c32d3e51-8a51-4dca-8532-ad3465a83eb4">265 | Humana Development |
+                c32d3e51-8a51-4dca-8532-ad3465a83eb4 </option>
+            <option value="e5f993a5-5661-4444-8780-d4560d2610d8">266 | Humana Execution |
+                e5f993a5-5661-4444-8780-d4560d2610d8 </option>
+            <option value="940925a8-6c54-4b5b-a653-8c34a15173e6">298 | OE QA DataLake Development |
+                940925a8-6c54-4b5b-a653-8c34a15173e6 </option>
+            <option value="99b7e6e2-f053-4e5c-942a-03f56609fc67">331 | Lilly Development |
+                99b7e6e2-f053-4e5c-942a-03f56609fc67 </option>
+            <option value="0d07495d-1bb0-4e1d-807e-d02d90db773b">332 | Lilly Execution |
+                0d07495d-1bb0-4e1d-807e-d02d90db773b </option>
+            <option value="d0790afa-cfd8-44b2-b280-d22a347245a9">364 | Gilead Development |
+                d0790afa-cfd8-44b2-b280-d22a347245a9 </option>
+            <option value="e4f1c6b0-928b-40d7-b539-cd4725ee94a0">397 | Lilly Preprod Execution |
+                e4f1c6b0-928b-40d7-b539-cd4725ee94a0 </option>
+            <option value="f7f93209-6168-44e1-b625-b1ee1ebe9897">398 | Bayer Development |
+                f7f93209-6168-44e1-b625-b1ee1ebe9897 </option>
+            <option value="9407b504-c0c4-4f9f-9c35-e5a97df9df9b">430 | Bayer Execution |
+                9407b504-c0c4-4f9f-9c35-e5a97df9df9b </option>
+            <option value="9a1d1c90-76e6-49dd-9551-c54c8b29ef05">463 | MerckCCM-0071 Stg Execution |
+                9a1d1c90-76e6-49dd-9551-c54c8b29ef05 </option>
+            <option value="8ffc4289-dfda-4bd9-b80a-ba1f70c425cc">496 | Bayer QA execution |
+                8ffc4289-dfda-4bd9-b80a-ba1f70c425cc </option>
+            <option value="65dee5cf-812b-4525-acf9-0bfd215da46f">497 | JobExec01 Instance 1 Development |
+                65dee5cf-812b-4525-acf9-0bfd215da46f </option>
+            <option value="93714f02-895e-4eb9-b4f6-979f2c155e57">529 | BMS Germany Development |
+                93714f02-895e-4eb9-b4f6-979f2c155e57 </option>
+            <option value="71034deb-fdee-4c59-932b-471efe6290c8">562 | BMS Germany Execution |
+                71034deb-fdee-4c59-932b-471efe6290c8 </option>
+            <option value="3d305f22-e717-4f74-86fd-474407032fe9">595 | FI SD Development |
+                3d305f22-e717-4f74-86fd-474407032fe9 </option>
+            <option value="d7dad7d0-386d-4890-b476-15107b83d926">596 | FI SD Client Development |
+                d7dad7d0-386d-4890-b476-15107b83d926 </option>
+            <option value="2d02a7e0-baff-41c6-bf44-a8e77af41c33">628 | Novartis Development |
+                2d02a7e0-baff-41c6-bf44-a8e77af41c33 </option>
+            <option value="3a80a1a7-4dbb-4ca8-bdf8-7504fe5a4fd4">661 | UCB EU Preprod Execution |
+                3a80a1a7-4dbb-4ca8-bdf8-7504fe5a4fd4 </option>
+            <option value="e2496844-decd-4c73-a383-3e273b724e4b">694 | BPAAS Development |
+                e2496844-decd-4c73-a383-3e273b724e4b </option>
+            <option value="91e9087b-58a3-4e09-9e24-fe332fe8a503">695 | Lilly Preprod Execution Med |
+                91e9087b-58a3-4e09-9e24-fe332fe8a503 </option>
+            <option value="8d789572-0c9d-4463-913b-dd8a2a042e40">727 | Lilly Execution Med |
+                8d789572-0c9d-4463-913b-dd8a2a042e40 </option>
+        </select><br /><br />
+
+        <input class="container__input" id="tokenValidity" type="number"
+            placeholder="Token Validity (in number of days)"><br /><br />
+
+        <button id="generateToken" type="button">Generate Token</button><br /><br />
+
+        <input class="container__input" id="token" type="text" placeholder="FlowBuilder Token" readonly><br /><br />
+    </div>
+
+    <div class="div-send-email">
+        <input class="container__input" id="toListCommaSeparated" type="text"
+            placeholder="To List (Semi-colon Separated)"><br /><br />
+        <input class="container__input" id="ccListCommaSeparated" type="text"
+            placeholder="CC List (Semi-colon Separated)"><br /><br />
+        <input class="container__input" id="releaseTag" type="text" placeholder="FlowBuilder Release Tag"><br /><br />
+        <input class="container__input" id="clientName" type="text" placeholder="FlowBuilder Client"><br /><br />
+        <input class="container__input" id="version" type="text" placeholder="FlowBuilder Version"><br /><br />
+
+        <select class="container__input" id="baseUrl" name="cars" id="cars">
+            <option value="">Select FlowBuilder Base URL</option>
+            <option value="htts://verso.qa.zsservices.com/ccm-0071flb1/web">
+                htts://verso.qa.zsservices.com/ccm-0071flb1/web</option>
+            <option value="https://verso.qa.zsservices.com/ccm-0071flb2/web">
+                https://verso.qa.zsservices.com/ccm-0071flb2/web</option>
+            <option value="https://verso.qa.zsservices.com/ccm-0071flb3/web">
+                https://verso.qa.zsservices.com/ccm-0071flb3/web</option>
+            <option value="https://verso.staging.zsservices.com/ccm-0071fbg/web">
+                https://verso.staging.zsservices.com/ccm-0071fbg/web</option>
+            <option value="https://verso.staging.zsservices.com/ccm-0071fbm/web">
+                https://verso.staging.zsservices.com/ccm-0071fbm/web</option>
+            <option value="https://verso.zsservices.com/ccm-0071fbg/web">https://verso.zsservices.com/ccm-0071fbg/web
+            </option>
+        </select><br /><br />
+
+        <input class="container__input" id="senderName" type="text" placeholder="Sender Name"><br /><br />
+        <button type="button" onclick="sendEmail()">Send email</button>
+    </div>
+
+
+    <!-- JS code to create email body and open default system email application -->
+    <script type="text/javascript">
+        function sendEmail() {
+            var tab = "%20%20%20%20%20%20%20%20%20%20%20"
+            var newline = "%0D%0A"
+            var toListCommaSeparated = document.getElementById("toListCommaSeparated").value
+            var ccListCommaSeparated = document.getElementById("ccListCommaSeparated").value
+            var releaseTag = document.getElementById("releaseTag").value
+            var clientName = document.getElementById("clientName").value
+            var genericSubject = `FlowBuilder ${releaseTag} Pre-Prod Upgrade | ${clientName}`
+            var version = document.getElementById("version").value
+            var baseUrl = document.getElementById("baseUrl").value
+            var token = document.getElementById("token").value
+            var senderName = document.getElementById("senderName").value
+
+            var body = `
+Hi,${newline}
+${newline}
+We have upgraded the FlowBuilder Pre-Prod environment with ${releaseTag} release (version ${version}).${newline}
+We request you to perform a sanity check like edit/save/commit operations and run jobs using remote agents.${newline}
+${newline}
+Steps to access FlowBuilder Pre-Prod site:${newline}${newline}
+${tab}1. Login to ${baseUrl} ${newline}
+${tab}2. After you login to OC visit the following url: ${baseUrl}/flows#!/customlogin ${newline}
+${tab}3. Enter the token - ${token} ${newline}
+${newline}
+${newline}
+If you do not have access to #1, please contact support.${newline}
+${newline}
+Regards,${newline}
+${senderName}`
+            window.open(`mailto:${toListCommaSeparated}?cc=${ccListCommaSeparated}&subject=${genericSubject}&body=${body}`);
+            document.getElementById("token").value = "";
+        }
+
+        // AJAX call to call token generation API
+        $(document).ready(function () {
+            $("#generateToken").click(function () {
+                var userId = document.getElementById("userId").value
+                var consumerAppKey = document.getElementById("consumerAppKey").value || document.getElementById("consumerAppKeyDropDown").value
+                var tokenValidity = document.getElementById("tokenValidity").value
+                var url = `http://localhost:8080/webapi/token/${userId}/${consumerAppKey}/${tokenValidity}`
+                $.get(url, function (data, status) {
+                    document.getElementById("token").value = data
+                });
+            });
+        });
+
+    </script>
+</body>
+
+</html>
