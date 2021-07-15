@@ -24,6 +24,12 @@ hs_err_pid*
 
 /backend/.idea
 /backend/simple-service-webapp.iml
+target/*
+/*/target/*
+target_*/*
+/*/target_*/*
+.idea
+.git
 
 /frontend/.idea
 /frontend/vscode
