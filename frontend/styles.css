@@ -23,3 +23,8 @@ button {
 #sampleLabel {
     text-align: center;
 }
+
+#token {
+    height: 200px;
+    word-wrap: break-word;
+}
