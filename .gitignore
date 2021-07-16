@@ -34,3 +34,4 @@ target_*/*
 /frontend/.idea
 /frontend/vscode
 /frontend/node_modules
+/frontend/package-lock.json
