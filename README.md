@@ -14,16 +14,21 @@
 - Open the cloned repo in Intellij (or the IDE of your choice)
 - In the terminal, navigate the the backend module of the code and run the following commands simultaneously
 
-> cd backend
-> mvn clean install -DskipTests
+> cd backend  
+> mvn clean install -DskipTests  
 > mvn jetty:run
 
-- Now, go to the content root using ```cd ..``` and navigate to the frontend code using ``` cd frontend```
+- Now, open another terminal and navigate to the frontend code using ``` cd frontend```
 - In the terminal, run the following command - 
 > npm install
+
+You may have to run ```npm audit fix``` in case of any vulnerabilities found. 
 
 - Once all the node modules have been downloaded, run the node server
 > node app.js
 
+At this point, both your backend and frontend servers are running, access the frontend on this URL - http://localhost:1593
 
-At this point, both your backend and fronend servers are running, access the frontend on this URL - http://localhost:1593
+|![jetty-server-start.PNG](https://github.com/ruch0401/jwt-token-generator-email-sender/blob/master/jetty-server-start.PNG)|
+|:--:|
+| *Jetty Server - Running*|
